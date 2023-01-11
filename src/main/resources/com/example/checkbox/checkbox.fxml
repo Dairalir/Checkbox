@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.checkbox.GUI.CheckboxControlleur">
+   <children>
+      <TextField fx:id="TextField" layoutX="14.0" layoutY="44.0" onAction="#On_Key_Typed" prefHeight="38.0" prefWidth="291.0" />
+      <Label fx:id="Label" layoutX="14.0" layoutY="109.0" prefHeight="38.0" prefWidth="291.0" />
+      <TitledPane fx:id="Choice" alignment="TOP_LEFT" collapsible="false" disable="true" layoutX="386.0" layoutY="14.0" prefHeight="133.0" prefWidth="200.0" text="Choix">
+         <content>
+            <VBox fx:id="ContainerChoice" alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="198.0" spacing="10.0">
+               <children>
+                  <CheckBox fx:id="CheckboxBackground" mnemonicParsing="false" onAction="#Check_Background" text="Couleur de fond" />
+                  <CheckBox fx:id="CheckboxText" mnemonicParsing="false" onAction="#Check_Text" text="Couleur du texte" />
+                  <CheckBox fx:id="CheckboxCase" mnemonicParsing="false" onAction="#Check_Case" text="Casse" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="Background" alignment="TOP_LEFT" collapsible="false" disable="true" layoutX="14.0" layoutY="219.0" prefHeight="133.0" prefWidth="157.0" text="Fond">
+         <content>
+            <VBox fx:id="ContainerBackground" alignment="CENTER_LEFT" prefHeight="108.0" prefWidth="151.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="BackgroundRed" mnemonicParsing="false" onAction="#Select_Bg_Color" text="Rouge">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Background_Radio" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="BackgroundGreen" layoutX="20.0" layoutY="55.0" mnemonicParsing="false" onAction="#Select_Bg_Color" text="Vert" toggleGroup="$Background_Radio" />
+                  <RadioButton fx:id="BackgroundBlue" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onAction="#Select_Bg_Color" text="Bleu" toggleGroup="$Background_Radio" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="Text" alignment="TOP_LEFT" collapsible="false" disable="true" layoutX="222.0" layoutY="219.0" prefHeight="133.0" prefWidth="157.0" text="Texte">
+         <content>
+            <VBox fx:id="ContainerText" alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="198.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="TextRed" mnemonicParsing="false" onAction="#Select_Text_Color" text="Rouge">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Text_Radio" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="TextWhite" layoutX="20.0" layoutY="55.0" mnemonicParsing="false" onAction="#Select_Text_Color" text="Blanc" toggleGroup="$Text_Radio" />
+                  <RadioButton fx:id="TextBlack" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" onAction="#Select_Text_Color" text="Noir" toggleGroup="$Text_Radio" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="Case" alignment="TOP_LEFT" collapsible="false" disable="true" layoutX="429.0" layoutY="219.0" prefHeight="133.0" prefWidth="157.0" text="Casse">
+         <content>
+            <VBox fx:id="ContainerCase" alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="198.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="Min" mnemonicParsing="false" onAction="#Select_Case" text="Minuscule">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Case_Radio" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="Maj" layoutX="20.0" layoutY="55.0" mnemonicParsing="false" onAction="#Select_Case" text="Majuscule" toggleGroup="$Case_Radio" />
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
